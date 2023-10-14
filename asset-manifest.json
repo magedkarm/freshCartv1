@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/freshCartv1/static/css/main.4344c6a7.css",
+    "main.js": "/freshCartv1/static/js/main.20f6f807.js",
+    "static/js/787.de0158e6.chunk.js": "/freshCartv1/static/js/787.de0158e6.chunk.js",
+    "static/media/fa-solid-900.ttf": "/freshCartv1/static/media/fa-solid-900.d75e3fd1eb12e9bd6655.ttf",
+    "static/media/slider-image-1.jpeg": "/freshCartv1/static/media/slider-image-1.3c3940ee0f1c3b17ff9a.jpeg",
+    "static/media/fa-brands-400.ttf": "/freshCartv1/static/media/fa-brands-400.016b4a6cdced82ab3aa1.ttf",
+    "static/media/slider-image-3.jpeg": "/freshCartv1/static/media/slider-image-3.7e5c9f7a513f6db6dd5e.jpeg",
+    "static/media/slider-image-2.jpeg": "/freshCartv1/static/media/slider-image-2.e510b0de8a4d96a1d5ad.jpeg",
+    "static/media/fa-solid-900.woff2": "/freshCartv1/static/media/fa-solid-900.b6879d41b0852f01ed5b.woff2",
+    "static/media/fa-brands-400.woff2": "/freshCartv1/static/media/fa-brands-400.878f31251d960bd6266f.woff2",
+    "static/media/error.webp": "/freshCartv1/static/media/error.098d5b4e424ac525b983.webp",
+    "static/media/fa-regular-400.ttf": "/freshCartv1/static/media/fa-regular-400.50701fbb8177c2dde530.ttf",
+    "static/media/fa-regular-400.woff2": "/freshCartv1/static/media/fa-regular-400.b041b1fa4fe241b23445.woff2",
+    "static/media/2.jpg": "/freshCartv1/static/media/2.96a08320f0007d30af67.jpg",
+    "static/media/1.jpg": "/freshCartv1/static/media/1.941f444ea4800c7f2e40.jpg",
+    "static/media/fa-v4compatibility.ttf": "/freshCartv1/static/media/fa-v4compatibility.c6a0c95b0a95c4553700.ttf",
+    "static/media/fa-v4compatibility.woff2": "/freshCartv1/static/media/fa-v4compatibility.1bac2991f3dbfa237aec.woff2",
+    "static/media/slick.svg": "/freshCartv1/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/freshCartv1/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/freshCartv1/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/freshCartv1/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/freshCartv1/index.html",
+    "main.4344c6a7.css.map": "/freshCartv1/static/css/main.4344c6a7.css.map",
+    "main.20f6f807.js.map": "/freshCartv1/static/js/main.20f6f807.js.map",
+    "787.de0158e6.chunk.js.map": "/freshCartv1/static/js/787.de0158e6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4344c6a7.css",
+    "static/js/main.20f6f807.js"
+  ]
+}
