@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../Context/AuthContect'
 import { Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
+import { CountCart } from '../../Context/CountCart'
 
 export default function Cart() {
 
@@ -11,6 +12,7 @@ export default function Cart() {
     let [cartId, setCartId] = useState("")
     let [cartProduct, setCartProduct] = useState([])
     let [reqTimeOut, setReqTimeOut] = useState([])
+    let { countNumber, setcountNumber } = useContext(CountCart)
     let [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
 
@@ -32,10 +34,12 @@ export default function Cart() {
         setIsLoading(false)
 
         if (response) {
-            console.log(response.data.data._id)
+            console.log(response.data.data)
             setCartId(response.data.data._id)
             setTotalPrice(response.data.data.totalCartPrice)
             setCartProduct(response.data.data.products)
+            // setcountNumber(response.data.data.products.length)
+            console.log(countNumber)
         }
     }
 
@@ -115,11 +119,12 @@ export default function Cart() {
                             </div>
                             {cartProduct.map((products, index) => {
                                 return <div key={products.product._id} className="cart-product">
+
                                     <div className="row border-bottom my-3 pb-2 d-flex align-items-center">
                                         <div className="col-md-2">
                                             <img src={products?.product.imageCover} className='img-fluid' alt="" />
                                         </div>
-                                        <div className="col-md-10 d-flex justify-content-between">
+                                        <div className="col-md-8 d-flex justify-content-between mb-2">
                                             <div className="div">
                                                 <h3>{products?.product.title}</h3>
                                                 <h5>price : {products?.price} EGP</h5>
@@ -128,13 +133,14 @@ export default function Cart() {
                                                     removeItemFromCart(products.product._id)
                                                 }} className="btn btn-sm m-0 p-0 text-danger"><i className="fa fa-trash"></i> Remove</button>
                                             </div>
-                                            <div className=" ">
-                                                <button onClick={() => { updateCart(products.product._id, products.count + 1, index) }} className="btn bg-main mx-2 text-white">+</button>
-                                                <span>{products?.count}</span>
-                                                <button onClick={() => { updateCart(products.product._id, products.count - 1, index) }} className="btn bg-main mx-2 text-white">-</button>
-                                            </div>
 
 
+
+                                        </div>
+                                        <div className="col-md-2 mt-sm-4 ">
+                                            <button onClick={() => { updateCart(products.product._id, products.count + 1, index) }} className="btn bg-main mx-2 text-white">+</button>
+                                            <span>{products?.count}</span>
+                                            <button onClick={() => { updateCart(products.product._id, products.count - 1, index) }} className="btn bg-main mx-2 text-white">-</button>
                                         </div>
                                     </div>
 

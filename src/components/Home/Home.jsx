@@ -15,7 +15,7 @@ export default function Home() {
         return axios.get("https://ecommerce.routemisr.com/api/v1/products")
     }
     let { data, isError, isFetched, isLoading, isFetching } = useQuery("products", getProducts, {
-        cacheTime: 5000,
+
     })
     console.log(data?.data.data)
 

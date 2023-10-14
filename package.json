@@ -1,7 +1,7 @@
 {
   "name": "ass-react-2",
   "version": "0.1.0",
-  "homepage": "https://magedkarm.github.io/freshCart",
+  "homepage": "https://magedkarm.github.io/freshCartv1",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-hot-toast": "^2.4.1",
+    "react-jwt": "^1.2.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",

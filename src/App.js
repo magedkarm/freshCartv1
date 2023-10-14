@@ -16,6 +16,11 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import CheckOut from './components/CheckOut/CheckOut'
 import AllOrders from './components/AllOrders/AllOrders'
+import WishList from './components/WishList/WishList'
+import CountCartProvider, { CountCart } from './Context/CountCart'
+import ForgetPassword from './components/ForgetPassword/ForgetPassword'
+import VerifyCode from './components/ForgetPassword/VerifyCode'
+import ResetPassword from './components/ForgetPassword/ResetPassword'
 
 
 export default function App() {
@@ -27,6 +32,7 @@ export default function App() {
         { path: "home", element: <ProtectedRoute><Home /></ProtectedRoute> },
         { path: "brands", element: <ProtectedRoute><Brands /></ProtectedRoute> },
         { path: "cart", element: <ProtectedRoute><Cart /></ProtectedRoute> },
+        { path: "wishList", element: <ProtectedRoute><WishList /></ProtectedRoute> },
         { path: "login", element: <Login /> },
         { path: "products", element: <ProtectedRoute><Products /> </ProtectedRoute> },
         { path: "productDetails/:id", element: <ProtectedRoute><ProductDetails /> </ProtectedRoute> },
@@ -34,6 +40,9 @@ export default function App() {
         { path: "checkout/:cartId", element: <ProtectedRoute><CheckOut /> </ProtectedRoute> },
         { path: "allorders", element: <ProtectedRoute><AllOrders /> </ProtectedRoute> },
         { path: "register", element: <Register /> },
+        { path: "forget-Password", element: <ForgetPassword /> },
+        { path: "verify-Code", element: <VerifyCode /> },
+        { path: "reset-password", element: <ResetPassword /> },
         { path: "*", element: <NotFound /> },
       ]
     }
@@ -42,7 +51,9 @@ export default function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <AuthContextProvider>
-          <RouterProvider router={routers}></RouterProvider>
+          <CountCartProvider>
+            <RouterProvider router={routers}></RouterProvider>
+          </CountCartProvider>
         </AuthContextProvider>
         {/* <ReactQueryDevtools /> */}
       </QueryClientProvider>

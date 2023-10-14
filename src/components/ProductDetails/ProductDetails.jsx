@@ -1,8 +1,10 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet';
-import { useParams } from 'react-router-dom'
+import toast from 'react-hot-toast';
+import { useNavigate, useParams } from 'react-router-dom'
 import Slider from "react-slick";
+import { AuthContext } from '../../Context/AuthContect';
 
 export default function ProductDetails() {
 
@@ -13,7 +15,8 @@ export default function ProductDetails() {
         slidesToShow: 1,
         slidesToScroll: 1
     };
-
+    let { setUserIsloggedIn } = useContext(AuthContext)
+    let navgateToLogIN = useNavigate()
     let params = useParams()
     let [productDetails, setProductDetails] = useState(null)
     let [isLoading, setIsLoading] = useState(false)
@@ -28,6 +31,27 @@ export default function ProductDetails() {
         setProductDetails(data.data)
         console.log(productDetails)
     }
+    async function addProductToCart(productId) {
+
+        let response = await axios.post("https://ecommerce.routemisr.com/api/v1/cart", {
+            productId
+        }, {
+            headers: {
+                token: localStorage.getItem("token")
+            }
+        }).catch((err) => {
+            console.log(err)
+            toast.error(err.response.data.message)
+            setUserIsloggedIn(false)
+            localStorage.removeItem("token")
+            navgateToLogIN("/login")
+        })
+        if (response) {
+            toast.success(response.data.message)
+        }
+
+    }
+
     return (
 
 
@@ -58,7 +82,7 @@ export default function ProductDetails() {
                                 </span>
                             </p>
                             <div className='d-flex justify-content-between'>
-                                <button className='btn bg-main text-white w-75'> Add to Cart</button>
+                                <button onClick={() => { addProductToCart(productDetails?.id) }} className='btn bg-main text-white w-75'> Add to Cart</button>
                                 <i className='fas fa-heart haert '></i>
                             </div>
 

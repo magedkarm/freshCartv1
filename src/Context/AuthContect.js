@@ -9,7 +9,7 @@ export default function AuthContextProvider({ children }) {
     let [userIsloggedIn, setUserIsloggedIn] = useState(localStorage.getItem("token") ? true : false)
 
     useEffect(() => {
-        console.log(userIsloggedIn)
+
 
 
         if (localStorage.getItem("token") != null) {

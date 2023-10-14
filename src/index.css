@@ -3,7 +3,8 @@
 :root {
   --main-color: #0aad0a;
   --light-color: #f0f3f2;
-  --shadow: rgba(145, 158, 171, .2) 0px 2px 4px -1px, rgba(145, 158, 171, .2) 0px 4px 5px 0px, rgba(145, 158, 171, .2) 0px 2px 4px -1px, rgba(145, 158, 171, .2) 0px 4px 5px 0px;
+  --shadow: 1px 1px 10px #4fa74f;
+  /* Fixed the syntax here */
   --font-family: 'Encode Sans Expanded', sans-serif;
   --rating-color: #ffc908;
 }
@@ -29,6 +30,10 @@ a:hover {
 .product:hover {
   box-shadow: var(--shadow);
   border: solid 1px var(--main-color);
+}
+
+.card-img img {
+  height: 300px !important;
 }
 
 .font-sm {
@@ -57,18 +62,19 @@ a:hover {
 }
 
 .product .btn {
-  transition: all .5s;
+  transition: all 0.5s;
   transform: translateY(100%);
   opacity: 0;
 }
 
 .product:hover .btn {
-
   transform: translateY(0%);
   opacity: 1;
 }
 
-/* loading */
+.card:hover {
+  box-shadow: 1px 1px 10px #4fa74f;
+}
 
 .loader {
   width: 48px;
